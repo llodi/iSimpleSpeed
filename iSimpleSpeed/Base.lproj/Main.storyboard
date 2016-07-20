@@ -18,48 +18,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="MGJ-3E-8GX">
-                                <rect key="frame" x="20" y="28" width="560" height="144"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Km/h" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="MPs-so-c0N">
-                                <rect key="frame" x="20" y="427" width="560" height="165"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" text="180" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="78" translatesAutoresizingMaskIntoConstraints="NO" id="GLo-Fm-6wG">
-                                <rect key="frame" x="20" y="180" width="560" height="239"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vst-vo-X5X">
+                                <rect key="frame" x="20" y="20" width="560" height="572"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="253" text="Max Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upS-9M-oXW">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="23"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" red="0.093854865770000004" green="0.22797818789999999" blue="0.4156879195" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="2lc-js-Ymw">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="58"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
+                                        <color key="textColor" red="0.90467701339999995" green="0.323694172" blue="0.30455907180000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="180" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="125" translatesAutoresizingMaskIntoConstraints="NO" id="Jtc-0f-E1K">
+                                        <rect key="frame" x="0.0" y="91" width="560" height="288"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="250"/>
+                                        <color key="textColor" red="0.093854865770000004" green="0.22797818789999999" blue="0.4156879195" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-l8-5ni">
+                                        <rect key="frame" x="0.0" y="384" width="560" height="188"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="0.093854865770000004" green="0.22797818789999999" blue="0.4156879195" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96611267328262329" green="0.9800834059715271" blue="0.99970716238021851" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="MGJ-3E-8GX" secondAttribute="trailing" id="1o0-R4-4uw"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="GLo-Fm-6wG" secondAttribute="leading" id="8QE-12-XIe"/>
-                            <constraint firstItem="MPs-so-c0N" firstAttribute="top" secondItem="GLo-Fm-6wG" secondAttribute="bottom" constant="8" symbolic="YES" id="F8y-yg-OQ2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GLo-Fm-6wG" secondAttribute="trailing" id="OTl-zA-XFJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MPs-so-c0N" secondAttribute="trailing" id="ea3-3D-MQE"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="MGJ-3E-8GX" secondAttribute="leading" id="f6u-bu-Zn9"/>
-                            <constraint firstItem="GLo-Fm-6wG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gLl-NX-y7b"/>
-                            <constraint firstItem="MGJ-3E-8GX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="j9p-1I-tGn"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MPs-so-c0N" secondAttribute="bottom" constant="8" symbolic="YES" id="kcy-UN-y9s"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="MPs-so-c0N" secondAttribute="leading" id="llr-ac-0Zp"/>
-                            <constraint firstItem="GLo-Fm-6wG" firstAttribute="top" secondItem="MGJ-3E-8GX" secondAttribute="bottom" constant="8" symbolic="YES" id="yBE-MG-wRn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vst-vo-X5X" secondAttribute="bottom" constant="-45" id="2aQ-Hk-2FZ">
+                                <variation key="heightClass=compact" constant="8" symbolic="YES"/>
+                            </constraint>
+                            <constraint firstAttribute="leadingMargin" secondItem="vst-vo-X5X" secondAttribute="leading" id="IuC-hD-BiG"/>
+                            <constraint firstItem="vst-vo-X5X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="O4b-cR-D1Q"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="vst-vo-X5X" secondAttribute="leading" id="Qpj-mn-W0K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vst-vo-X5X" secondAttribute="trailing" constant="142" id="WYH-lu-W2L">
+                                <variation key="heightClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="vst-vo-X5X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="a52-F5-Inc">
+                                <variation key="heightClass=compact" constant="8" symbolic="YES"/>
+                            </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vst-vo-X5X" secondAttribute="bottom" constant="363" id="ov8-GP-QpN">
+                                <variation key="heightClass=regular" constant="8" symbolic="YES"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="vst-vo-X5X" secondAttribute="trailing" constant="142" id="xRD-94-qHq">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="vst-vo-X5X"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="IuC-hD-BiG"/>
+                                <exclude reference="O4b-cR-D1Q"/>
+                                <exclude reference="Qpj-mn-W0K"/>
+                                <exclude reference="WYH-lu-W2L"/>
+                                <exclude reference="a52-F5-Inc"/>
+                                <exclude reference="xRD-94-qHq"/>
+                                <exclude reference="2aQ-Hk-2FZ"/>
+                                <exclude reference="ov8-GP-QpN"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="vst-vo-X5X"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="IuC-hD-BiG"/>
+                                <include reference="a52-F5-Inc"/>
+                                <include reference="xRD-94-qHq"/>
+                                <include reference="2aQ-Hk-2FZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="vst-vo-X5X"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="O4b-cR-D1Q"/>
+                                <include reference="Qpj-mn-W0K"/>
+                                <include reference="WYH-lu-W2L"/>
+                                <include reference="ov8-GP-QpN"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="maxSpeedLabel" destination="MGJ-3E-8GX" id="BMS-VO-Cmm"/>
-                        <outlet property="speedLabel" destination="GLo-Fm-6wG" id="1dP-tF-yGu"/>
+                        <outlet property="maxSpeedLabel" destination="2lc-js-Ymw" id="h0B-yd-72f"/>
+                        <outlet property="speedLabel" destination="Jtc-0f-E1K" id="vgY-gY-kD6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="321"/>
+            <point key="canvasLocation" x="82" y="265.5"/>
         </scene>
     </scenes>
 </document>

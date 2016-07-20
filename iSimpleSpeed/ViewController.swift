@@ -40,12 +40,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             
         speed = (locations.last?.speed ?? 0.0) * 3.6
-        speedLabel.text = "\(Int(speed) ?? 0)"
+        speedLabel?.text = "\(Int(speed) ?? 0)"
         
         maxSpeed = getMaxSpeed(maxSpeed,two: (speed))
-        maxSpeedLabel.text = "\(Int(maxSpeed) ?? 0)"
+        maxSpeedLabel?.text = "\(Int(maxSpeed) ?? 0)"
         
-        print ("\(speed * 3.6) km/h and max speed \(maxSpeed) km/h")
+        print ("\(speed) km/h and max speed \(maxSpeed) km/h")
 
     }
     
