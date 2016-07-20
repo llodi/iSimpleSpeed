@@ -38,13 +38,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locationMamager.location {	
-            speed = location.speed * 3.6
-            speedLabel.text = "\(Int(speed) ?? 0)"
-            maxSpeed = getMaxSpeed(maxSpeed,two: (speed * 3.6))
-            maxSpeedLabel.text = "\(Int(maxSpeed) ?? 0)"
-            print ("\(speed * 3.6) and max speed \(maxSpeed)")
-        }
+            
+        speed = (locations.last?.speed ?? 0.0) * 3.6
+        speedLabel.text = "\(Int(speed) ?? 0)"
+        
+        maxSpeed = getMaxSpeed(maxSpeed,two: (speed))
+        maxSpeedLabel.text = "\(Int(maxSpeed) ?? 0)"
+        
+        print ("\(speed * 3.6) km/h and max speed \(maxSpeed) km/h")
+
     }
     
 
@@ -52,13 +54,4 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var maxSpeedLabel: UILabel!
 
 }
-
-let numberFormatter: NSNumberFormatter = {
-    let formatter = NSNumberFormatter()
-    formatter.locale = NSLocale.currentLocale()
-    formatter.numberStyle = .DecimalStyle
-    formatter.maximumFractionDigits = 1
-    formatter.groupingSeparator = " "
-    return formatter
-}()
 
