@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,73 +19,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-l8-5ni">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-l8-5ni">
                                 <rect key="frame" x="0.0" y="384" width="560" height="188"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="D4L-Tn-RDl">
-                                        <variation key="heightClass=compact" constant="12"/>
-                                    </constraint>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="0.093854865770000004" green="0.22797818789999999" blue="0.4156879195" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.15686274510000001" green="0.34509803919999998" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="D4L-Tn-RDl"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="D4L-Tn-RDl"/>
-                                    </mask>
+                                <variation key="heightClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="180" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="125" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jtc-0f-E1K">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="2lc-js-Ymw">
+                                <rect key="frame" x="0.0" y="28" width="560" height="58"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="78"/>
+                                <color key="textColor" red="0.78431372549019607" green="0.0" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="64"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="254" text="Max Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="upS-9M-oXW">
+                                <rect key="frame" x="0.0" y="0.0" width="560" height="23"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.15686274510000001" green="0.34509803919999998" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" text="180" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="125" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jtc-0f-E1K">
                                 <rect key="frame" x="0.0" y="91" width="560" height="288"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="300"/>
-                                <color key="textColor" red="0.093854865770000004" green="0.22797818789999999" blue="0.4156879195" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.99215686274509807" green="0.52156862745098043" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="2lc-js-Ymw">
-                                <rect key="frame" x="0.0" y="28" width="560" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="sGB-qb-BtM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="78"/>
-                                <color key="textColor" red="0.90467701339999995" green="0.323694172" blue="0.30455907180000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="sGB-qb-BtM"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="sGB-qb-BtM"/>
-                                    </mask>
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="240"/>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Max Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="upS-9M-oXW">
-                                <rect key="frame" x="0.0" y="0.0" width="560" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="pVN-Jg-xKz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="0.093854865770000004" green="0.22797818789999999" blue="0.4156879195" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="pVN-Jg-xKz"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="pVN-Jg-xKz"/>
-                                    </mask>
+                                <variation key="heightClass=regular">
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="300"/>
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.96611267328262329" green="0.9800834059715271" blue="0.99970716238021851" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Jtc-0f-E1K" secondAttribute="leading" id="4SC-Ks-Y2S"/>
                             <constraint firstAttribute="trailingMargin" secondItem="upS-9M-oXW" secondAttribute="trailing" id="6bx-Aa-8P3"/>
@@ -119,11 +97,12 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YCY-l8-5ni"/>
-                                <exclude reference="Jtc-0f-E1K"/>
                                 <exclude reference="2lc-js-Ymw"/>
                                 <exclude reference="upS-9M-oXW"/>
+                                <exclude reference="Jtc-0f-E1K"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="McH-cZ-lmf"/>
                                 <exclude reference="6bx-Aa-8P3"/>
                                 <exclude reference="C7w-xc-nQY"/>
                                 <exclude reference="JIM-0h-Tfc"/>
@@ -152,17 +131,17 @@
                                 <exclude reference="saO-wt-9i9"/>
                                 <exclude reference="uMQ-1C-t8v"/>
                                 <exclude reference="wBq-Gz-clb"/>
-                                <exclude reference="McH-cZ-lmf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="subviews">
                                 <include reference="YCY-l8-5ni"/>
-                                <include reference="Jtc-0f-E1K"/>
                                 <include reference="2lc-js-Ymw"/>
                                 <include reference="upS-9M-oXW"/>
+                                <include reference="Jtc-0f-E1K"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="McH-cZ-lmf"/>
                                 <include reference="C7w-xc-nQY"/>
                                 <include reference="JIM-0h-Tfc"/>
                                 <include reference="TD4-Lv-LGS"/>
@@ -179,15 +158,14 @@
                                 <include reference="V5D-Vv-jgg"/>
                                 <include reference="X2t-GJ-hPj"/>
                                 <include reference="saO-wt-9i9"/>
-                                <include reference="McH-cZ-lmf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="YCY-l8-5ni"/>
-                                <include reference="Jtc-0f-E1K"/>
                                 <include reference="2lc-js-Ymw"/>
                                 <include reference="upS-9M-oXW"/>
+                                <include reference="Jtc-0f-E1K"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="6bx-Aa-8P3"/>
