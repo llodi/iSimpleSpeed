@@ -23,7 +23,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationMamager.requestAlwaysAuthorization()
         locationMamager.requestWhenInUseAuthorization()
         
-        locationMamager.desiredAccuracy = kCLLocationAccuracyBest
+        locationMamager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationMamager.delegate = self
         locationMamager.startUpdatingLocation()
     }
