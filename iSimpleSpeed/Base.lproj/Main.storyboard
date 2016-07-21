@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,135 +19,160 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7hj-VU-cQQ">
-                                <rect key="frame" x="9" y="124" width="829" height="298"/>
+                            <view contentMode="redraw" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="6BB-Wd-WfI" customClass="CircleView" customModule="iSimpleSpeed" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="298"/>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scale">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outLineColor">
+                                        <color key="value" red="1" green="0.34145607680000001" blue="0.2734112836" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" red="0.15402464299999999" green="0.53856358090000001" blue="0.34833250710000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="28" width="560" height="434"/>
+                                </variation>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WPx-ph-d2S">
+                                <rect key="frame" x="245" y="0.0" width="584" height="298"/>
                                 <subviews>
-                                    <view contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6BB-Wd-WfI" customClass="CircleView" customModule="iSimpleSpeed" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="298"/>
-                                        <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="scale">
-                                                <real key="value" value="0.80000000000000004"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="outLineColor">
-                                                <color key="value" red="1" green="0.34145607680000001" blue="0.2734112836" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
-                                                <color key="value" red="0.15402464299999999" green="0.53856358090000001" blue="0.34833250710000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WPx-ph-d2S">
-                                        <rect key="frame" x="245" y="0.0" width="584" height="298"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dXU-Pn-hEn">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="298"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dXU-Pn-hEn">
-                                                <rect key="frame" x="0.0" y="0.0" width="116" height="298"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="748" ambiguous="YES" text="Max Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtx-Fx-VFR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="298"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                        <color key="textColor" red="0.12549019610000001" green="0.28235294119999998" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U06-xx-rbC">
-                                                        <rect key="frame" x="98" y="0.0" width="18" height="298"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
-                                                        <color key="textColor" red="1" green="0.34145607680000001" blue="0.2734112836" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <variation key="heightClass=compact" axis="vertical"/>
-                                                <variation key="heightClass=regular" axis="horizontal"/>
-                                            </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="180" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="48" translatesAutoresizingMaskIntoConstraints="NO" id="SBB-3T-LQR">
-                                                <rect key="frame" x="121" y="0.0" width="417" height="298"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="250"/>
-                                                <color key="textColor" red="1" green="0.65087834206756034" blue="0.096514597696646498" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="heightClass=compact">
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="96"/>
-                                                </variation>
-                                                <variation key="heightClass=regular">
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="170"/>
-                                                </variation>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N66-wP-hfu">
-                                                <rect key="frame" x="543" y="0.0" width="41" height="298"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" ambiguous="YES" text="Max Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtx-Fx-VFR">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="298"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                 <color key="textColor" red="0.12549019610000001" green="0.28235294119999998" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U06-xx-rbC">
+                                                <rect key="frame" x="98" y="0.0" width="18" height="298"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                                                <color key="textColor" red="1" green="0.34145607680000001" blue="0.2734112836" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="161" id="DlJ-Y4-zqL">
-                                                <variation key="heightClass=compact" constant="200"/>
-                                            </constraint>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="DlJ-Y4-zqL"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=compact" axis="vertical">
-                                            <mask key="subviews">
-                                                <include reference="dXU-Pn-hEn"/>
-                                            </mask>
-                                            <mask key="constraints">
-                                                <include reference="DlJ-Y4-zqL"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular" axis="vertical" spacing="5">
-                                            <mask key="subviews">
-                                                <include reference="dXU-Pn-hEn"/>
-                                            </mask>
-                                        </variation>
+                                        <variation key="heightClass=compact" axis="vertical"/>
+                                        <variation key="heightClass=regular" axis="horizontal"/>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" ambiguous="YES" text="180" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="48" translatesAutoresizingMaskIntoConstraints="NO" id="SBB-3T-LQR">
+                                        <rect key="frame" x="121" y="0.0" width="417" height="298"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="250"/>
+                                        <color key="textColor" red="1" green="0.65087834206756034" blue="0.096514597696646498" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="160"/>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="200"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N66-wP-hfu">
+                                        <rect key="frame" x="543" y="0.0" width="41" height="298"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="0.12549019610000001" green="0.28235294119999998" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <variation key="heightClass=compact" axis="horizontal"/>
-                                <variation key="heightClass=regular" alignment="fill" axis="vertical"/>
+                                <variation key="heightClass=compact" axis="vertical">
+                                    <mask key="subviews">
+                                        <include reference="dXU-Pn-hEn"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular" axis="vertical" spacing="5">
+                                    <mask key="subviews">
+                                        <include reference="dXU-Pn-hEn"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7hj-VU-cQQ" firstAttribute="top" secondItem="xiZ-mm-aWf" secondAttribute="bottom" id="HRX-jh-XNU"/>
-                            <constraint firstItem="KIR-ed-MY8" firstAttribute="top" secondItem="7hj-VU-cQQ" secondAttribute="bottom" constant="8" id="HTP-Tj-ySy"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="7hj-VU-cQQ" secondAttribute="leading" id="Hv7-jG-FZ3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7hj-VU-cQQ" secondAttribute="trailing" id="SAd-Rk-LUY"/>
-                            <constraint firstItem="KIR-ed-MY8" firstAttribute="top" secondItem="WPx-ph-d2S" secondAttribute="bottom" constant="156" id="XDQ-bt-Ohr">
+                            <constraint firstItem="KIR-ed-MY8" firstAttribute="top" secondItem="WPx-ph-d2S" secondAttribute="bottom" constant="8" id="249-j1-ffG"/>
+                            <constraint firstItem="KIR-ed-MY8" firstAttribute="top" secondItem="6BB-Wd-WfI" secondAttribute="bottom" constant="8" symbolic="YES" id="3Vr-AW-0kz"/>
+                            <constraint firstItem="KIR-ed-MY8" firstAttribute="top" secondItem="WPx-ph-d2S" secondAttribute="bottom" constant="161" id="5bs-gA-zc3">
+                                <variation key="heightClass=compact" constant="8" symbolic="YES"/>
+                            </constraint>
+                            <constraint firstItem="WPx-ph-d2S" firstAttribute="top" secondItem="xiZ-mm-aWf" secondAttribute="bottom" constant="8" symbolic="YES" id="C6I-0H-051"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WPx-ph-d2S" secondAttribute="trailing" constant="264" id="CFv-XL-gdA">
                                 <variation key="heightClass=regular" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="7hj-VU-cQQ" firstAttribute="top" secondItem="xiZ-mm-aWf" secondAttribute="bottom" constant="8" id="YLA-Pp-JsF"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="7hj-VU-cQQ" secondAttribute="leading" id="hok-05-bDr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7hj-VU-cQQ" secondAttribute="trailing" constant="97" id="xiG-Vl-ODT">
+                            <constraint firstAttribute="trailingMargin" secondItem="6BB-Wd-WfI" secondAttribute="trailing" constant="30" id="CLa-XX-1ey">
                                 <variation key="heightClass=regular" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="WPx-ph-d2S" firstAttribute="leading" secondItem="4Nl-q8-nmO" secondAttribute="leadingMargin" constant="12" id="FoN-vP-7CH">
+                                <variation key="heightClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="WPx-ph-d2S" firstAttribute="top" secondItem="6BB-Wd-WfI" secondAttribute="bottom" constant="45" id="HRQ-Mk-JDp">
+                                <variation key="heightClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="6BB-Wd-WfI" firstAttribute="leading" secondItem="4Nl-q8-nmO" secondAttribute="leadingMargin" constant="30" id="PEu-3c-HNY">
+                                <variation key="heightClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="WPx-ph-d2S" secondAttribute="trailing" id="efe-lD-2lL"/>
+                            <constraint firstItem="WPx-ph-d2S" firstAttribute="leading" secondItem="6BB-Wd-WfI" secondAttribute="trailing" id="gHj-Os-Adh">
+                                <variation key="heightClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint firstItem="6BB-Wd-WfI" firstAttribute="top" secondItem="xiZ-mm-aWf" secondAttribute="bottom" constant="14" id="qAu-8u-yvx">
+                                <variation key="heightClass=compact" constant="8" symbolic="YES"/>
+                            </constraint>
+                            <constraint firstAttribute="leadingMargin" secondItem="6BB-Wd-WfI" secondAttribute="leading" id="yY8-kM-dDy"/>
+                            <constraint firstItem="6BB-Wd-WfI" firstAttribute="top" secondItem="xiZ-mm-aWf" secondAttribute="bottom" id="ybq-DY-03h"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="6BB-Wd-WfI"/>
+                                <exclude reference="WPx-ph-d2S"/>
+                            </mask>
                             <mask key="constraints">
-                                <exclude reference="HRX-jh-XNU"/>
-                                <exclude reference="Hv7-jG-FZ3"/>
-                                <exclude reference="SAd-Rk-LUY"/>
-                                <exclude reference="YLA-Pp-JsF"/>
-                                <exclude reference="hok-05-bDr"/>
-                                <exclude reference="xiG-Vl-ODT"/>
-                                <exclude reference="HTP-Tj-ySy"/>
-                                <exclude reference="XDQ-bt-Ohr"/>
+                                <exclude reference="CLa-XX-1ey"/>
+                                <exclude reference="PEu-3c-HNY"/>
+                                <exclude reference="qAu-8u-yvx"/>
+                                <exclude reference="yY8-kM-dDy"/>
+                                <exclude reference="ybq-DY-03h"/>
+                                <exclude reference="C6I-0H-051"/>
+                                <exclude reference="CFv-XL-gdA"/>
+                                <exclude reference="FoN-vP-7CH"/>
+                                <exclude reference="HRQ-Mk-JDp"/>
+                                <exclude reference="efe-lD-2lL"/>
+                                <exclude reference="gHj-Os-Adh"/>
+                                <exclude reference="249-j1-ffG"/>
+                                <exclude reference="3Vr-AW-0kz"/>
+                                <exclude reference="5bs-gA-zc3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="6BB-Wd-WfI"/>
+                                <include reference="WPx-ph-d2S"/>
+                            </mask>
                             <mask key="constraints">
-                                <include reference="HRX-jh-XNU"/>
-                                <include reference="Hv7-jG-FZ3"/>
-                                <include reference="SAd-Rk-LUY"/>
-                                <include reference="HTP-Tj-ySy"/>
+                                <include reference="qAu-8u-yvx"/>
+                                <include reference="yY8-kM-dDy"/>
+                                <include reference="C6I-0H-051"/>
+                                <include reference="efe-lD-2lL"/>
+                                <include reference="gHj-Os-Adh"/>
+                                <include reference="3Vr-AW-0kz"/>
+                                <include reference="5bs-gA-zc3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="6BB-Wd-WfI"/>
+                                <include reference="WPx-ph-d2S"/>
+                            </mask>
                             <mask key="constraints">
-                                <include reference="YLA-Pp-JsF"/>
-                                <include reference="hok-05-bDr"/>
-                                <include reference="xiG-Vl-ODT"/>
-                                <include reference="XDQ-bt-Ohr"/>
+                                <include reference="CLa-XX-1ey"/>
+                                <include reference="PEu-3c-HNY"/>
+                                <include reference="ybq-DY-03h"/>
+                                <include reference="CFv-XL-gdA"/>
+                                <include reference="FoN-vP-7CH"/>
+                                <include reference="HRQ-Mk-JDp"/>
+                                <include reference="249-j1-ffG"/>
                             </mask>
                         </variation>
                     </view>
@@ -158,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4b-wR-Ilj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="140.25"/>
+            <point key="canvasLocation" x="32" y="154.5"/>
         </scene>
     </scenes>
 </document>
