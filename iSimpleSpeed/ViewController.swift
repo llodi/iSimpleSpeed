@@ -39,9 +39,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             
-        speed = ((locations.last?.speed ?? 0.0) * 3.6) < 0.0 ? 0.0 :
-            (locations.last?.speed ?? 0.0)
+        speed = (locations.last?.speed ?? 0.0) / 1000 * 3600
         speedLabel?.text = "\(Int(speed) ?? 0)"
+        
+        if Int(speed) ?? 0 > 0 {
+            scaleSpeed.counter = Int(speed) ?? 0
+        }
         
         maxSpeed = getMaxSpeed(maxSpeed,two: (speed))
         maxSpeedLabel?.text = "\(Int(maxSpeed) ?? 0)"
@@ -51,8 +54,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
 
+    @IBOutlet weak var scaleSpeed: CircleView! {
+        didSet {
+            scaleSpeed.counter = Int(speed) ?? 0
+            //scaleSpeed.scale = scale
+        }
+    }
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var maxSpeedLabel: UILabel!
-
+    
 }
-
