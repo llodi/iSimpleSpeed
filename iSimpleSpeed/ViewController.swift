@@ -39,18 +39,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             
-        speed = (locations.last?.speed ?? 0.0) / 1000 * 3600
-        speedLabel?.text = "\(Int(speed) ?? 0)"
+        if let accurancy = locations.last?.horizontalAccuracy where (accurancy > 0 && accurancy < 100) {
+            speed = (locations.last?.speed ?? 0.0) / 1000 * 3600
+            speedLabel?.text = "\(Int(speed) ?? 0)"
+            
+            if Int(speed) ?? 0 > 0 {
+                scaleSpeed.counter = Int(speed) ?? 0
+            }
+            
+            maxSpeed = getMaxSpeed(maxSpeed,two: (speed))
+            maxSpeedLabel?.text = "\(Int(maxSpeed) ?? 0)"
         
-        if Int(speed) ?? 0 > 0 {
-            scaleSpeed.counter = Int(speed) ?? 0
+            getGpsSignal(accurancy)
+            accurancyValue.text = "\(Int(accurancy))"
         }
-        
-        maxSpeed = getMaxSpeed(maxSpeed,two: (speed))
-        maxSpeedLabel?.text = "\(Int(maxSpeed) ?? 0)"
-        
         //print ("\(speed) km/h and max speed \(maxSpeed) km/h")
 
+    }
+    
+    private func getGpsSignal(accuracy: CLLocationAccuracy) {
+        if accuracy < 0 {
+            gpsSignal.text = "None"
+        } else if accuracy > 163 {
+            gpsSignal.text = "Poor"
+        } else if accuracy > 48 {
+            gpsSignal.text = "Average"
+        } else {
+            gpsSignal.text = "Full"
+        }
     }
     
 
@@ -62,5 +78,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var maxSpeedLabel: UILabel!
+    @IBOutlet weak var accurancyValue: UILabel!
+    @IBOutlet weak var gpsSignal: UILabel!
     
 }

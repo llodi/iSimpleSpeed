@@ -19,24 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="redraw" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="6BB-Wd-WfI" customClass="CircleView" customModule="iSimpleSpeed" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="298"/>
-                                <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="scale">
-                                        <real key="value" value="0.80000000000000004"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="outLineColor">
-                                        <color key="value" red="1" green="0.34145607680000001" blue="0.2734112836" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
-                                        <color key="value" red="0.15402464299999999" green="0.53856358090000001" blue="0.34833250710000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="20" y="28" width="560" height="434"/>
-                                </variation>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WPx-ph-d2S">
                                 <rect key="frame" x="245" y="0.0" width="584" height="298"/>
                                 <subviews>
@@ -71,24 +53,64 @@
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="200"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N66-wP-hfu">
-                                        <rect key="frame" x="543" y="0.0" width="41" height="298"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" red="0.12549019610000001" green="0.28235294119999998" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ew1-ze-f2m">
+                                        <rect key="frame" x="-20" y="268" width="600" height="61"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N66-wP-hfu">
+                                                <rect key="frame" x="20" y="20" width="560" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" red="0.12549019610000001" green="0.28235294119999998" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="accurancy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpT-km-dDq">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="298"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" red="0.12549019610000001" green="0.28235294119999998" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXw-yH-s1k">
+                                                <rect key="frame" x="98" y="0.0" width="18" height="298"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                <color key="textColor" red="1" green="0.34145607680000001" blue="0.2734112836" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <variation key="heightClass=regular" axis="horizontal">
+                                            <mask key="subviews">
+                                                <include reference="QpT-km-dDq"/>
+                                                <include reference="gXw-yH-s1k"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="vertical">
                                     <mask key="subviews">
                                         <include reference="dXU-Pn-hEn"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular" axis="vertical" spacing="5">
+                                <variation key="heightClass=regular" axis="vertical" misplaced="YES" spacing="5">
+                                    <rect key="frame" x="20" y="483" width="560" height="317"/>
                                     <mask key="subviews">
                                         <include reference="dXU-Pn-hEn"/>
+                                        <include reference="ew1-ze-f2m"/>
                                     </mask>
                                 </variation>
                             </stackView>
+                            <view contentMode="redraw" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="6BB-Wd-WfI" customClass="CircleView" customModule="iSimpleSpeed" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="298"/>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outLineColor">
+                                        <color key="value" red="1" green="0.34145607680000001" blue="0.2734112836" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" red="0.15402464299999999" green="0.53856358090000001" blue="0.34833250710000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="20" width="560" height="463"/>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -125,10 +147,13 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="6BB-Wd-WfI"/>
                                 <exclude reference="WPx-ph-d2S"/>
+                                <exclude reference="6BB-Wd-WfI"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="249-j1-ffG"/>
+                                <exclude reference="3Vr-AW-0kz"/>
+                                <exclude reference="5bs-gA-zc3"/>
                                 <exclude reference="CLa-XX-1ey"/>
                                 <exclude reference="PEu-3c-HNY"/>
                                 <exclude reference="qAu-8u-yvx"/>
@@ -140,43 +165,42 @@
                                 <exclude reference="HRQ-Mk-JDp"/>
                                 <exclude reference="efe-lD-2lL"/>
                                 <exclude reference="gHj-Os-Adh"/>
-                                <exclude reference="249-j1-ffG"/>
-                                <exclude reference="3Vr-AW-0kz"/>
-                                <exclude reference="5bs-gA-zc3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="subviews">
-                                <include reference="6BB-Wd-WfI"/>
                                 <include reference="WPx-ph-d2S"/>
+                                <include reference="6BB-Wd-WfI"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="3Vr-AW-0kz"/>
+                                <include reference="5bs-gA-zc3"/>
                                 <include reference="qAu-8u-yvx"/>
                                 <include reference="yY8-kM-dDy"/>
                                 <include reference="C6I-0H-051"/>
                                 <include reference="efe-lD-2lL"/>
                                 <include reference="gHj-Os-Adh"/>
-                                <include reference="3Vr-AW-0kz"/>
-                                <include reference="5bs-gA-zc3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
-                                <include reference="6BB-Wd-WfI"/>
                                 <include reference="WPx-ph-d2S"/>
+                                <include reference="6BB-Wd-WfI"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="249-j1-ffG"/>
                                 <include reference="CLa-XX-1ey"/>
                                 <include reference="PEu-3c-HNY"/>
                                 <include reference="ybq-DY-03h"/>
                                 <include reference="CFv-XL-gdA"/>
                                 <include reference="FoN-vP-7CH"/>
                                 <include reference="HRQ-Mk-JDp"/>
-                                <include reference="249-j1-ffG"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="accurancyValue" destination="gXw-yH-s1k" id="7ml-oT-o3P"/>
+                        <outlet property="gpsSignal" destination="QpT-km-dDq" id="yOf-FX-Dkf"/>
                         <outlet property="maxSpeedLabel" destination="U06-xx-rbC" id="khy-MB-iDE"/>
                         <outlet property="scaleSpeed" destination="6BB-Wd-WfI" id="Bup-lV-pMH"/>
                         <outlet property="speedLabel" destination="SBB-3T-LQR" id="hHQ-3p-5X1"/>

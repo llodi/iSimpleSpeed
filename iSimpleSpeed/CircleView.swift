@@ -109,7 +109,6 @@ class CircleView: UIView {
         outLinePath.lineWidth = lineWidth
         outLinePath.stroke()
         
-        
     }
     
 }
