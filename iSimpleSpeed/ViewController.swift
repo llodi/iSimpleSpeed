@@ -10,75 +10,38 @@ import UIKit
 import CoreLocation
 import Foundation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, SpeedometerDelegate {
     
-    var locationMamager = CLLocationManager()
-    var speed = 0.0
-    var maxSpeed = 0.0
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationMamager.requestAlwaysAuthorization()
-        locationMamager.requestWhenInUseAuthorization()
-        
-        locationMamager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationMamager.delegate = self
-        locationMamager.startUpdatingLocation()
+        SpeedManager.speedManager.delegate = self
+        if let location = SpeedManager.speedManager.locationManager {
+            location.startUpdatingLocation()
+        }
     }
     
-    func getMaxSpeed (one: Double, two: Double) -> Double {
-        if one > two {
-            return one
-        } else {
-            return two
-        }
-        
+    func updateSpeedometer(speed: Double, maxSpeed: Double, gpsSignalQuality: String) {
+        speedLabel?.text = "\(Int(speed) ?? 0)"
+        maxSpeedLabel?.text = "\(Int(maxSpeed) ?? 0)"
+        gpsSignal?.text = gpsSignalQuality
+        scaleSpeed.counter = Int(speed) ?? 0
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            
-        if let accurancy = locations.last?.horizontalAccuracy where (accurancy > 0 && accurancy < 100) {
-            speed = (locations.last?.speed ?? 0.0) / 1000 * 3600
-            speedLabel?.text = "\(Int(speed) ?? 0)"
-            
-            if Int(speed) ?? 0 > 0 {
-                scaleSpeed.counter = Int(speed) ?? 0
-            }
-            
-            maxSpeed = getMaxSpeed(maxSpeed,two: (speed))
-            maxSpeedLabel?.text = "\(Int(maxSpeed) ?? 0)"
-        
-            getGpsSignal(accurancy)
-            //accurancyValue.text = "\(Int(accurancy))"
-        }
-        //print ("\(speed) km/h and max speed \(maxSpeed) km/h")
-
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        //locationMamager.stopUpdatingLocation()
+        //print("Stop get location!")
     }
     
-    private func getGpsSignal(accuracy: CLLocationAccuracy) {
-        if accuracy < 0 {
-            gpsSignal.text = "None signal"
-        } else if accuracy > 163 {
-            gpsSignal.text = "Poor signal"
-        } else if accuracy > 48 {
-            gpsSignal.text = "Average signal"
-        } else {
-            gpsSignal.text = "Full signal"
-        }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)        
+        //print("Start get location!")
     }
     
 
-    @IBOutlet weak var scaleSpeed: CircleView! {
-        didSet {
-            scaleSpeed.counter = Int(speed) ?? 0
-            //scaleSpeed.scale = scale
-        }
-    }
+    @IBOutlet weak var scaleSpeed: CircleView! 
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var maxSpeedLabel: UILabel!
-    @IBOutlet weak var accurancyValue: UILabel!
     @IBOutlet weak var gpsSignal: UILabel!
     
 }

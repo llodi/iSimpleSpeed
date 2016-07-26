@@ -24,6 +24,8 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Your location is used to send you information about your speed</string>
+	<key>NSLocationWhenIsUseUsageDescription</key>
+	<string>Your location is used to send you information about your speed</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

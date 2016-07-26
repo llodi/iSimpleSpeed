@@ -12,6 +12,7 @@
 		531AA0DD1D3F3C90006228FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531AA0DB1D3F3C90006228FC /* Main.storyboard */; };
 		531AA0DF1D3F3C90006228FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531AA0DE1D3F3C90006228FC /* Assets.xcassets */; };
 		531AA0E21D3F3C90006228FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531AA0E01D3F3C90006228FC /* LaunchScreen.storyboard */; };
+		532722FF1D47D37600F4A4CC /* SpeedManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532722FE1D47D37600F4A4CC /* SpeedManger.swift */; };
 		533A4D7D1D409D9B0030E519 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A4D7C1D409D9B0030E519 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		531AA0DE1D3F3C90006228FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		531AA0E11D3F3C90006228FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		531AA0E31D3F3C90006228FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		532722FE1D47D37600F4A4CC /* SpeedManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedManger.swift; sourceTree = "<group>"; };
 		533A4D7C1D409D9B0030E519 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 		531AA0D61D3F3C90006228FC /* iSimpleSpeed */ = {
 			isa = PBXGroup;
 			children = (
+				532722FE1D47D37600F4A4CC /* SpeedManger.swift */,
 				533A4D7C1D409D9B0030E519 /* CircleView.swift */,
 				531AA0D91D3F3C90006228FC /* ViewController.swift */,
 				531AA0DB1D3F3C90006228FC /* Main.storyboard */,
@@ -150,6 +153,7 @@
 				533A4D7D1D409D9B0030E519 /* CircleView.swift in Sources */,
 				531AA0DA1D3F3C90006228FC /* ViewController.swift in Sources */,
 				531AA0D81D3F3C90006228FC /* AppDelegate.swift in Sources */,
+				532722FF1D47D37600F4A4CC /* SpeedManger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
