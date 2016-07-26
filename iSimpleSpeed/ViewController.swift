@@ -51,7 +51,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             maxSpeedLabel?.text = "\(Int(maxSpeed) ?? 0)"
         
             getGpsSignal(accurancy)
-            accurancyValue.text = "\(Int(accurancy))"
+            //accurancyValue.text = "\(Int(accurancy))"
         }
         //print ("\(speed) km/h and max speed \(maxSpeed) km/h")
 
@@ -59,13 +59,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     private func getGpsSignal(accuracy: CLLocationAccuracy) {
         if accuracy < 0 {
-            gpsSignal.text = "None"
+            gpsSignal.text = "None signal"
         } else if accuracy > 163 {
-            gpsSignal.text = "Poor"
+            gpsSignal.text = "Poor signal"
         } else if accuracy > 48 {
-            gpsSignal.text = "Average"
+            gpsSignal.text = "Average signal"
         } else {
-            gpsSignal.text = "Full"
+            gpsSignal.text = "Full signal"
         }
     }
     

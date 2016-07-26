@@ -36,9 +36,6 @@ class CircleView: UIView {
             scale = bounds.width / bounds.height
         }
         
-//        print ("width \(bounds.width) height \(bounds.height)")
-//        print("scale is \(scale)")
-        
         return scale
     }
     
@@ -52,13 +49,16 @@ class CircleView: UIView {
     var lineWidth: CGFloat = 5.0 { didSet { setNeedsDisplay() } }
     
     @IBInspectable
+    var verticalCirclePosition: CGFloat = 20.0 { didSet { setNeedsDisplay() } }
+    
+    @IBInspectable
     var  maxSpeed: Int = 200
     
        
     override func drawRect(rect: CGRect) {
         
         var center: CGPoint {
-            return CGPoint(x: bounds.midX, y: bounds.midY)
+            return CGPoint(x: bounds.midX, y: bounds.midY + verticalCirclePosition)
         }
         
         let radius: CGFloat = max(bounds.width, bounds.height) / 2 * scale
