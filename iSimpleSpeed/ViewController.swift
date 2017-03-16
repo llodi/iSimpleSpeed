@@ -20,20 +20,20 @@ class ViewController: UIViewController, SpeedometerDelegate {
         }
     }
     
-    func updateSpeedometer(speed: Double, maxSpeed: Double, gpsSignalQuality: String) {
-        speedLabel?.text = "\(Int(speed) ?? 0)"
-        maxSpeedLabel?.text = "\(Int(maxSpeed) ?? 0)"
+    func updateSpeedometer(_ speed: Double, maxSpeed: Double, gpsSignalQuality: String) {
+        speedLabel?.text = "\(Int(speed))"
+        maxSpeedLabel?.text = "\(Int(maxSpeed))"
         gpsSignal?.text = gpsSignalQuality
-        scaleSpeed.counter = Int(speed) ?? 0
+        scaleSpeed.counter = Int(speed)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //locationMamager.stopUpdatingLocation()
         //print("Stop get location!")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)        
         //print("Start get location!")
     }

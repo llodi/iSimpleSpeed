@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 protocol SpeedometerDelegate {
-    func updateSpeedometer(speed: Double, maxSpeed: Double, gpsSignalQuality: String)
+    func updateSpeedometer(_ speed: Double, maxSpeed: Double, gpsSignalQuality: String)
 }
 
 class SpeedManager : NSObject, CLLocationManagerDelegate {
@@ -30,7 +30,7 @@ class SpeedManager : NSObject, CLLocationManagerDelegate {
         
         if let lm = locationManager {
             
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined {
+            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.notDetermined {
                 lm.requestAlwaysAuthorization()
             }
 
@@ -41,7 +41,7 @@ class SpeedManager : NSObject, CLLocationManagerDelegate {
         }
     }
     
-    private func getMaxSpeed (one: Double, two: Double) -> Double {
+    fileprivate func getMaxSpeed (_ one: Double, two: Double) -> Double {
         if one > two {
             return one
         } else {
@@ -50,7 +50,7 @@ class SpeedManager : NSObject, CLLocationManagerDelegate {
         
     }
     
-    private func getGpsSignal(accuracy: CLLocationAccuracy) -> String {
+    fileprivate func getGpsSignal(_ accuracy: CLLocationAccuracy) -> String {
         if accuracy < 0 {
             return "None signal"
         } else if accuracy > 163 {
@@ -62,11 +62,11 @@ class SpeedManager : NSObject, CLLocationManagerDelegate {
         }
     }
     
-    private var maxSpeed = 0.0
+    fileprivate var maxSpeed = 0.0
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        if let accurancy = locations.last?.horizontalAccuracy where (accurancy > 0 && accurancy < 100) {
+        if let accurancy = locations.last?.horizontalAccuracy, (accurancy > 0 && accurancy < 100) {
             var speed = (locations.last?.speed ?? 0.0) / 1000 * 3600
             speed = speed > 0 ? speed : 0
             maxSpeed = getMaxSpeed(maxSpeed,two: speed)

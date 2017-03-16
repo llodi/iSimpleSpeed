@@ -26,7 +26,7 @@ class CircleView: UIView {
         }
     }
     
-    private var scale: CGFloat {
+    fileprivate var scale: CGFloat {
 
         var scale: CGFloat = 0.7
         
@@ -40,10 +40,10 @@ class CircleView: UIView {
     }
     
     @IBInspectable
-    var outLineColor: UIColor = UIColor.greenColor() { didSet { setNeedsDisplay() } }
+    var outLineColor: UIColor = UIColor.green { didSet { setNeedsDisplay() } }
     
     @IBInspectable
-    var counterColor: UIColor = UIColor.orangeColor() { didSet { setNeedsDisplay() } }
+    var counterColor: UIColor = UIColor.orange { didSet { setNeedsDisplay() } }
     
     @IBInspectable
     var lineWidth: CGFloat = 5.0 { didSet { setNeedsDisplay() } }
@@ -55,7 +55,7 @@ class CircleView: UIView {
     var  maxSpeed: Int = 200
     
        
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         var center: CGPoint {
             return CGPoint(x: bounds.midX, y: bounds.midY + verticalCirclePosition)
@@ -95,15 +95,15 @@ class CircleView: UIView {
             clockwise: true
         )
         
-        outLinePath.addArcWithCenter(
-            center,
+        outLinePath.addArc(
+            withCenter: center,
             radius: (radius - arcWidth + CircleConstants.OutLineOffsett),
             startAngle: outLineEndAngle,
             endAngle: startAngle,
             clockwise: false
         )
         
-        outLinePath.closePath()
+        outLinePath.close()
         
         outLineColor.setStroke()
         outLinePath.lineWidth = lineWidth
